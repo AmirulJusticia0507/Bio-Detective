@@ -1,1 +1,1 @@
-const express=require("express");const cors=require("cors");const app=express();app.use(cors());app.use(express.json());app.get("/api/health",(_,res)=>res.json({status:"ok"}));app.listen(4000,()=>console.log("backend on 4000"));
+const express=require("express");const cors=require("cors");const app=express();app.use(cors());app.use(express.json());app.get("/api/health",(_,res)=>res.json({status:"ok"}));app.post("/api/login",(req,res)=>{const{user}=req.body;res.json({token:"demo-token-"+(user||"guest")});});app.listen(4000,()=>console.log("backend on 4000"));

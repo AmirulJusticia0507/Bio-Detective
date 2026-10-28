@@ -10,6 +10,6 @@
 - [x] Virtual Lab: serologi/DNA fingerprinting (opsional MVP)
 - [x] Deduction Board drag-and-drop + validation check
 - [x] Learning Hub: glossary & post-mortem
-- [ ] Auth JWT & progress/skor
+- [x] Auth JWT & progress/skor
 - [ ] Testing & QA
 - [ ] Deploy & dokumentasi
