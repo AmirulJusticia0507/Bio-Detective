@@ -236,3 +236,44 @@
 @media (prefers-reduced-motion: reduce) {
   .cf-file, .reveal, .cf-glint, .cf-caret, .cf-stamp { animation: none; }
 }
+
+/* ===== ModuleFile — variasi berkas modul ===== */
+.cf-icon {
+  display: grid;
+  place-items: center;
+  width: 64px;
+  height: 64px;
+  margin: -1.25rem auto .25rem;
+  font-size: 1.9rem;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 25%, #241f38, #0d1126);
+  border: 2px solid rgba(226,49,49,.45);
+}
+.cf-tagline {
+  color: #cfd6e8;
+  font-style: italic;
+  margin: -.3rem 0 .4rem;
+  font-size: .95rem;
+}
+.cf-tasks {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  line-height: 1.7;
+  font-size: .92rem;
+}
+.cf-tasks li { padding-left: 1.4rem; position: relative; }
+.cf-tasks li::before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+  color: #e23131;
+}
+.cf-science {
+  margin: 0;
+  padding-left: 1.2rem;
+  line-height: 1.85;
+  font-size: .9rem;
+  color: #c8cfe0;
+}
+.cf-science li::marker { color: #e23131; }

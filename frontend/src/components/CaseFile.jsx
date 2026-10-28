@@ -27,7 +27,7 @@ function useDecodeTitle(title, delay = 100) {
   return text
 }
 
-function Typewriter({ text, speed = 16 }) {
+export function Typewriter({ text, speed = 16 }) {
   const [shown, setShown] = useState('')
   useEffect(() => {
     setShown('')
@@ -50,7 +50,7 @@ function Typewriter({ text, speed = 16 }) {
   )
 }
 
-function ConanGlasses() {
+export function ConanGlasses() {
   return (
     <svg className="cf-glasses" viewBox="0 0 120 44" aria-hidden="true">
       <g fill="none" stroke="#e23131" strokeWidth="4">
