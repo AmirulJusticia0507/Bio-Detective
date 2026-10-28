@@ -17,7 +17,7 @@
 ## Backlog / Post-MVP
 - [ ] Kartu modul di grid `[Work]` belum bisa diklik → tambahkan klik/navigasi (scroll ke lab atau route) + keyboard focus, bukan cuma hover style.
 - [ ] Fitur perlu ditingkatkan:
-  - [ ] Multi-case support (saat ini hanya `cases[0]` yang dirender di App.jsx).
-  - [ ] Case navigation antar kasus.
+  - [x] Multi-case support (rendering sekarang data-driven via `cases` array + `activeId`).
+  - [x] Case navigation antar kasus (case switcher di hero).
   - [ ] Progress & skor user terhubung ke auth JWT backend.
   - [ ] ChemSphere panel: tampilkan error state saat fetch gagal.

@@ -24,3 +24,7 @@ html { scroll-behavior: smooth; }
 .stats { max-width:1100px; margin:2rem auto; padding:2rem; display:grid; grid-template-columns:repeat(3,1fr); gap:1rem; text-align:center; }
 .stats b { display:block; font-size:2rem; }
 .stats span { color:var(--muted); }
+.case-switch { display:flex; gap:.5rem; flex-wrap:wrap; margin-top:1.5rem; }
+.case-btn { background:transparent; border:1px solid rgba(255,255,255,.15); color:var(--fg); padding:.5rem 1rem; border-radius:10px; cursor:pointer; font-size:.9rem; }
+.case-btn.active { background:var(--accent); border-color:var(--accent); color:#fff; }
+.card-hint { margin:1rem 0 0; color:var(--muted); font-size:.85rem; letter-spacing:.02em; }

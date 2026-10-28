@@ -6,10 +6,14 @@ import SerologyLab from './labs/SerologyLab'
 import DeductionBoard from './components/DeductionBoard'
 import LearningHub from './components/LearningHub'
 import ChemSpherePanel from './components/ChemSpherePanel'
+import CaseFile from './components/CaseFile'
 import './App.css'
 
-function ModuleCard({ id, label, children }) {
-  const open = () => document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'center' })
+function ModuleCard({ id, label, children, onOpen }) {
+  const open = () => {
+    if (onOpen) return onOpen()
+    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'center' })
+  }
   const onKey = (e) => {
     if (e.key === 'Enter' || e.key === ' ') {
       e.preventDefault()
@@ -33,10 +37,12 @@ function ModuleCard({ id, label, children }) {
 
 function App() {
   const [dark, setDark] = useState(true)
+  const [activeCase, setActiveCase] = useState(null)
+  const [activeId, setActiveId] = useState(cases[0]?.id)
   useEffect(() => {
     document.documentElement.classList.toggle('light', !dark)
   }, [dark])
-  const c = cases[0]
+  const c = cases.find((x) => x.id === activeId) ?? cases[0]
   return (
     <div className="app">
       <nav className="nav">
@@ -51,12 +57,25 @@ function App() {
           <a className="btn" href="#work">Start Case</a>
           <a className="btn ghost" href="#work">View Modules</a>
         </div>
+        <div className="case-switch">
+          {cases.map((x) => (
+            <button
+              key={x.id}
+              className={x.id === activeId ? 'case-btn active' : 'case-btn'}
+              onClick={() => setActiveId(x.id)}
+            >
+              {x.title}
+            </button>
+          ))}
+        </div>
       </header>
       <section id="work" className="section">
         <h2 className="sec-title">[Work]</h2>
         <div className="grid">
-          <ModuleCard id="module-case" label={`Open case: ${c.title}`}>
+          <ModuleCard id="module-case" label={`Open case: ${c.title}`} onOpen={() => setActiveCase(c)}>
             <h3>{c.title}</h3><p>Case narrative &amp; suspects.</p>
+            <ul className="suspects">{c.suspects?.map((s) => <li key={s.name}>{s.name}</li>)}</ul>
+            <p className="card-hint">🔍 Klik untuk membuka berkas kasus</p>
           </ModuleCard>
           <ModuleCard id="module-reagent" label="Open Reagent Lab">
             <h3>Reagent Lab</h3><ReagentLab />
