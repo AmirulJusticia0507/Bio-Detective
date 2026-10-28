@@ -8,6 +8,29 @@ import LearningHub from './components/LearningHub'
 import ChemSpherePanel from './components/ChemSpherePanel'
 import './App.css'
 
+function ModuleCard({ id, label, children }) {
+  const open = () => document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'center' })
+  const onKey = (e) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault()
+      open()
+    }
+  }
+  return (
+    <div
+      className="card"
+      id={id}
+      tabIndex={0}
+      role="button"
+      aria-label={label}
+      onClick={open}
+      onKeyDown={onKey}
+    >
+      {children}
+    </div>
+  )
+}
+
 function App() {
   const [dark, setDark] = useState(true)
   useEffect(() => {
@@ -32,13 +55,27 @@ function App() {
       <section id="work" className="section">
         <h2 className="sec-title">[Work]</h2>
         <div className="grid">
-          <div className="card"><h3>{c.title}</h3><p>Case narrative &amp; suspects.</p></div>
-          <div className="card"><h3>Reagent Lab</h3><ReagentLab /></div>
-          <div className="card"><h3>TLC Lab</h3><TlcLab /></div>
-          <div className="card"><h3>Serology</h3><SerologyLab /></div>
-          <div className="card"><h3>Deduction Board</h3><DeductionBoard /></div>
-          <div className="card"><h3>Learning Hub</h3><LearningHub /></div>
-          <div className="card"><h3>ChemSphere</h3><ChemSpherePanel /></div>
+          <ModuleCard id="module-case" label={`Open case: ${c.title}`}>
+            <h3>{c.title}</h3><p>Case narrative &amp; suspects.</p>
+          </ModuleCard>
+          <ModuleCard id="module-reagent" label="Open Reagent Lab">
+            <h3>Reagent Lab</h3><ReagentLab />
+          </ModuleCard>
+          <ModuleCard id="module-tlc" label="Open TLC Lab">
+            <h3>TLC Lab</h3><TlcLab />
+          </ModuleCard>
+          <ModuleCard id="module-serology" label="Open Serology Lab">
+            <h3>Serology</h3><SerologyLab />
+          </ModuleCard>
+          <ModuleCard id="module-deduction" label="Open Deduction Board">
+            <h3>Deduction Board</h3><DeductionBoard />
+          </ModuleCard>
+          <ModuleCard id="module-learning" label="Open Learning Hub">
+            <h3>Learning Hub</h3><LearningHub />
+          </ModuleCard>
+          <ModuleCard id="module-chemsphere" label="Open ChemSphere">
+            <h3>ChemSphere</h3><ChemSpherePanel />
+          </ModuleCard>
         </div>
       </section>
       <section className="stats">
