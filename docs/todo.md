@@ -19,5 +19,5 @@
 - [ ] Fitur perlu ditingkatkan:
   - [x] Multi-case support (rendering sekarang data-driven via `cases` array + `activeId`).
   - [x] Case navigation antar kasus (case switcher di hero).
-  - [ ] Progress & skor user terhubung ke auth JWT backend.
+  - [x] Progress & skor user terhubung ke auth JWT backend (API layer: POST/GET /api/progress + frontend client `src/lib/progress.js`).
   - [ ] ChemSphere panel: tampilkan error state saat fetch gagal.
