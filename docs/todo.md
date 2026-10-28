@@ -1,0 +1,13 @@
+# Todo List
+
+## MVP: "Sianida dalam Cangkir Kopi"
+- [ ] Setup project scaffold (frontend + backend + DB)
+- [ ] Implementasi Case Engine (narasi, tersangka, alibi)
+- [ ] Virtual Lab: uji reagen FeSO₄ + FeCl₃ (Biru Prusia)
+- [ ] Virtual Lab: kromatografi TLC & perbandingan Rf
+- [ ] Virtual Lab: serologi/DNA fingerprinting (opsional MVP)
+- [ ] Deduction Board drag-and-drop + validation check
+- [ ] Learning Hub: glossary & post-mortem
+- [ ] Auth JWT & progress/skor
+- [ ] Testing & QA
+- [ ] Deploy & dokumentasi
