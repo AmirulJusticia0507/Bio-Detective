@@ -13,3 +13,11 @@
 - [x] Auth JWT & progress/skor
 - [x] Testing & QA
 - [x] Deploy & dokumentasi
+
+## Backlog / Post-MVP
+- [ ] Kartu modul di grid `[Work]` belum bisa diklik → tambahkan klik/navigasi (scroll ke lab atau route) + keyboard focus, bukan cuma hover style.
+- [ ] Fitur perlu ditingkatkan:
+  - [ ] Multi-case support (saat ini hanya `cases[0]` yang dirender di App.jsx).
+  - [ ] Case navigation antar kasus.
+  - [ ] Progress & skor user terhubung ke auth JWT backend.
+  - [ ] ChemSphere panel: tampilkan error state saat fetch gagal.
