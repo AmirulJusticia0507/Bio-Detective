@@ -29,10 +29,6 @@ html { scroll-behavior: smooth; }
 .hero-anim-2 { animation-delay:.15s; }
 .hero-anim-3 { animation-delay:.25s; }
 .hero-anim-4 { animation-delay:.35s; }
-.btn { padding:.75rem 1.4rem; border-radius:12px; background:var(--accent); color:#fff; text-decoration:none; border:none; cursor:pointer; font-weight:600; transition:transform .2s ease, box-shadow .2s ease, background .2s ease; }
-.btn:hover { transform:translateY(-2px); box-shadow:0 10px 24px rgba(124,92,255,.35); }
-.btn.ghost { background:transparent; border:1px solid rgba(255,255,255,.15); color:var(--fg); }
-.btn.ghost:hover { border-color:rgba(124,92,255,.6); box-shadow:none; }
 .stats { max-width:1100px; margin:2rem auto; padding:2rem; display:grid; grid-template-columns:repeat(3,1fr); gap:1rem; text-align:center; }
 .stats b { display:block; font-size:2rem; }
 .stats span { color:var(--muted); }
