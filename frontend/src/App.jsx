@@ -11,7 +11,7 @@ import './App.css'
 function App() {
   const [dark, setDark] = useState(() => localStorage.getItem('theme') === 'dark')
   useEffect(() => {
-    document.documentElement.classList.toggle('dark', dark)
+    document.documentElement.classList.toggle('light', !dark)
     localStorage.setItem('theme', dark ? 'dark' : 'light')
   }, [dark])
   const c = cases[0]
