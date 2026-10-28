@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { cases } from './data/cases'
-import ReagentLab from './labs/ReagentLab'\nimport TlcLab from './labs/TlcLab'\nimport SerologyLab from './labs/SerologyLab'\nimport DeductionBoard from './components/DeductionBoard'\nimport LearningHub from './components/LearningHub'
+import ReagentLab from './labs/ReagentLab'\nimport TlcLab from './labs/TlcLab'\nimport SerologyLab from './labs/SerologyLab'\nimport DeductionBoard from './components/DeductionBoard'\nimport LearningHub from './components/LearningHub'\nimport ChemSpherePanel from './components/ChemSpherePanel'
 import './App.css'
 
 function App() {
@@ -17,10 +17,11 @@ function App() {
       <ul>{c.suspects.map(s=><li key={s}>{s}</li>)}</ul>
       <h3>Siklus</h3>
       <ol>{c.steps.map(s=><li key={s}>{s}</li>)}</ol>
-      <ReagentLab />\n      <TlcLab />\n      <SerologyLab />\n      <DeductionBoard />\n      <LearningHub />
+      <ReagentLab />\n      <TlcLab />\n      <SerologyLab />\n      <DeductionBoard />\n      <LearningHub />\n      <ChemSpherePanel />
       <button onClick={() => setDark(d => !d)}>{dark ? 'Light Mode' : 'Dark Mode'}</button>
     </div>
   )
 }
 export default App
+
 
