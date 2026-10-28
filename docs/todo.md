@@ -6,7 +6,7 @@
 - [x] Implementasi PWA (manifest, service worker, offline cache)
 - [x] Implementasi Case Engine (narasi, tersangka, alibi)
 - [x] Virtual Lab: uji reagen FeSO₄ + FeCl₃ (Biru Prusia)
-- [ ] Virtual Lab: kromatografi TLC & perbandingan Rf
+- [x] Virtual Lab: kromatografi TLC & perbandingan Rf
 - [ ] Virtual Lab: serologi/DNA fingerprinting (opsional MVP)
 - [ ] Deduction Board drag-and-drop + validation check
 - [ ] Learning Hub: glossary & post-mortem

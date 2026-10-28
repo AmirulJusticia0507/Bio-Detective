@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { cases } from './data/cases'
-import ReagentLab from './labs/ReagentLab'
+import ReagentLab from './labs/ReagentLab'\nimport TlcLab from './labs/TlcLab'
 import './App.css'
 
 function App() {
@@ -17,7 +17,7 @@ function App() {
       <ul>{c.suspects.map(s=><li key={s}>{s}</li>)}</ul>
       <h3>Siklus</h3>
       <ol>{c.steps.map(s=><li key={s}>{s}</li>)}</ol>
-      <ReagentLab />
+      <ReagentLab />\n      <TlcLab />
       <button onClick={() => setDark(d => !d)}>{dark ? 'Light Mode' : 'Dark Mode'}</button>
     </div>
   )
