@@ -1,13 +1,8 @@
 # Arsitektur
 
-## Lapisan
-```
-+-----------------------------------------------------------------------+
-| FRONTEND LAYER                                                        |
-|  - Framework: Vue 3 / React.js (Vite)                                |
-|  - Interactive Canvas: HTML5 Canvas / Pixi.js                        |
-|  - UI: Tailwind CSS                                                  |
-+-----------------------------------------------------------------------+
+- Frontend: Vue 3/React + Vite, Tailwind CSS, Pixi.js/HTML5 Canvas.
+- PWA: Service Worker, Web App Manifest, cache offline aset & data.
+- Dark Mode: theme tokens + class strategy Tailwind.
 | (REST API / WebSocket)                                               |
 +-----------------------------------------------------------------------+
 | BACKEND LAYER                                                         |

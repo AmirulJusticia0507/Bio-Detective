@@ -2,6 +2,8 @@
 
 ## MVP: "Sianida dalam Cangkir Kopi"
 - [ ] Setup project scaffold (frontend + backend + DB)
+- [ ] Implementasi Dark Mode (toggle + sistem preferensi)
+- [ ] Implementasi PWA (manifest, service worker, offline cache)
 - [ ] Implementasi Case Engine (narasi, tersangka, alibi)
 - [ ] Virtual Lab: uji reagen FeSO₄ + FeCl₃ (Biru Prusia)
 - [ ] Virtual Lab: kromatografi TLC & perbandingan Rf
