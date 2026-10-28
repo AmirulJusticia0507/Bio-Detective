@@ -1,7 +1,7 @@
 # Todo List
 
 ## MVP: "Sianida dalam Cangkir Kopi"
-- [ ] Setup project scaffold (frontend + backend + DB)
+- [x] Setup project scaffold (frontend + backend + DB)
 - [ ] Implementasi Dark Mode (toggle + sistem preferensi)
 - [ ] Implementasi PWA (manifest, service worker, offline cache)
 - [ ] Implementasi Case Engine (narasi, tersangka, alibi)
