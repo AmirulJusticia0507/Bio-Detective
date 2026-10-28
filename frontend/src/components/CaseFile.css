@@ -1,0 +1,238 @@
+/* ===== Case File — bergaya intro kasus Detective Conan ===== */
+
+.cf-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+  overflow-y: auto;
+  animation: cf-fade-in .25s ease both;
+}
+.cf-backdrop {
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(900px 500px at 50% -10%, #1d2340, #05070f 75%);
+  opacity: .96;
+}
+
+.cf-file {
+  position: relative;
+  width: min(860px, 100%);
+  margin: 1rem auto;
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.035), rgba(255,255,255,.0) 120px),
+    #0a0e1c;
+  color: #eef1fa;
+  border: 1px solid rgba(226,49,49,.35);
+  border-radius: 6px;
+  padding: 2.25rem 2rem 2rem;
+  box-shadow: 0 30px 80px rgba(0,0,0,.7);
+  overflow: hidden;
+  animation: cf-file-in .45s cubic-bezier(.2,.9,.25,1.2) both;
+  font-family: Georgia, 'Times New Roman', serif;
+}
+
+/* pita polisi di sisi atas */
+.cf-tape {
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 9px;
+  background: repeating-linear-gradient(
+    45deg,
+    #e23131 0 16px,
+    #05070f 16px 32px
+  );
+  opacity: .85;
+}
+
+.cf-head { position: relative; text-align: center; margin-top: .5rem; }
+.cf-glasses { width: 96px; height: auto; opacity: .9; }
+
+/* kilau kaca kacamata Conan */
+.cf-glint { opacity: 0; animation: cf-glint 2.6s ease-in-out infinite; }
+.glint-b { animation-delay: 1.3s; }
+
+.cf-eyebrow {
+  color: #e23131;
+  font-family: Inter, system-ui, sans-serif;
+  font-size: .72rem;
+  letter-spacing: .35em;
+  margin: .9rem 0 0;
+}
+.cf-title {
+  font-size: clamp(1.5rem, 4.5vw, 2.4rem);
+  margin: .35rem 0 .6rem;
+  color: #fff;
+  text-shadow: 0 0 24px rgba(226,49,49,.35);
+  min-height: 1.2em;
+}
+.cf-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .35rem 1.25rem;
+  justify-content: center;
+  color: #9aa3b8;
+  font-family: Inter, system-ui, sans-serif;
+  font-size: .8rem;
+  margin: 0;
+}
+
+/* stempel status miring ala berkas polisi */
+.cf-stamp {
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: rotate(8deg);
+  border: 2px solid #e23131;
+  color: #e23131;
+  font-family: Inter, system-ui, sans-serif;
+  font-weight: 800;
+  font-size: .7rem;
+  letter-spacing: .2em;
+  padding: .3rem .55rem;
+  border-radius: 4px;
+  opacity: .85;
+  animation: cf-stamp .4s .6s cubic-bezier(.2,1.4,.3,1) both;
+}
+
+.cf-section { margin-top: 1.6rem; }
+.cf-section h3 {
+  color: #e23131;
+  font-family: Inter, system-ui, sans-serif;
+  font-size: .75rem;
+  letter-spacing: .25em;
+  border-bottom: 1px solid rgba(226,49,49,.35);
+  padding-bottom: .45rem;
+  margin: 0 0 .9rem;
+}
+
+/* avatar siluet */
+.cf-avatar {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-family: Inter, system-ui, sans-serif;
+  font-weight: 800;
+  color: #cfd6e8;
+  background:
+    radial-gradient(circle at 30% 25%, #2a3152, #11152a);
+  border: 2px solid rgba(255,255,255,.15);
+  filter: grayscale(1);
+  flex: none;
+}
+.cf-avatar.victim { font-size: 1.4rem; border-color: rgba(226,49,49,.6); color: #ffb9b9; }
+.cf-suspect:hover .cf-avatar { filter: grayscale(0); border-color: #e23131; transition: .25s; }
+
+.cf-victim { display: flex; gap: 1rem; align-items: flex-start; }
+.cf-victim b { font-size: 1rem; }
+.cf-victim small {
+  display: block;
+  color: #9aa3b8;
+  font-family: Inter, system-ui, sans-serif;
+  margin: .1rem 0 .4rem;
+}
+.cf-victim p { margin: .15rem 0; font-size: .9rem; line-height: 1.5; }
+.cf-victim em { color: #e23131; font-style: normal; font-weight: 700; }
+.cf-note { color: #9aa3b8; }
+
+/* narasi mesin ketik */
+.cf-narrative {
+  font-size: 1rem;
+  line-height: 1.85;
+  letter-spacing: .01em;
+  min-height: 6.5em;
+  margin: 0;
+}
+.cf-caret {
+  display: inline-block;
+  width: .55em;
+  height: 1.1em;
+  background: #e23131;
+  margin-left: 2px;
+  vertical-align: text-bottom;
+  animation: cf-blink 1s steps(1) infinite;
+}
+
+/* lineup tersangka ala kartu suspects anime */
+.cf-suspects {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: .8rem;
+}
+.cf-suspect {
+  background: rgba(255,255,255,.04);
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: 10px;
+  padding: .9rem;
+  text-align: center;
+  transition: border-color .25s, transform .25s;
+}
+.cf-suspect:hover { border-color: #e23131; transform: translateY(-2px); }
+.cf-suspect .cf-avatar { margin: 0 auto .5rem; }
+.cf-suspect b { display: block; }
+.cf-suspect > small {
+  color: #9aa3b8;
+  font-family: Inter, system-ui, sans-serif;
+  font-size: .72rem;
+}
+.cf-suspect dl {
+  margin: .7rem 0 0;
+  text-align: left;
+  font-size: .8rem;
+  line-height: 1.5;
+}
+.cf-suspect dt {
+  color: #e23131;
+  font-family: Inter, system-ui, sans-serif;
+  font-size: .62rem;
+  letter-spacing: .15em;
+  margin-top: .5rem;
+}
+.cf-suspect dd { margin: .1rem 0 0; }
+
+.cf-evidence { margin: 0; padding-left: 1.2rem; line-height: 1.9; font-size: .92rem; }
+.cf-evidence li::marker { color: #e23131; }
+
+.cf-actions {
+  margin-top: 2rem;
+  display: flex;
+  gap: .75rem;
+  flex-wrap: wrap;
+}
+.cf-btn {
+  flex: 1;
+  padding: .8rem 1.2rem;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,.2);
+  background: transparent;
+  color: #eef1fa;
+  font-family: Inter, system-ui, sans-serif;
+  font-weight: 600;
+  cursor: pointer;
+  transition: .2s;
+}
+.cf-btn:hover { border-color: #e23131; }
+.cf-btn.primary { background: #e23131; border-color: #e23131; }
+.cf-btn.primary:hover { background: #c22424; }
+
+/* reveal bertahap ala storyboard */
+.reveal { animation: cf-reveal .5s var(--d, 0s) ease both; }
+
+@keyframes cf-fade-in { from { opacity: 0; } }
+@keyframes cf-file-in { from { opacity: 0; transform: translateY(26px) scale(.97); } }
+@keyframes cf-reveal { from { opacity: 0; transform: translateY(12px); } }
+@keyframes cf-blink { 50% { opacity: 0; } }
+@keyframes cf-stamp { from { opacity: 0; transform: rotate(8deg) scale(1.6); } }
+@keyframes cf-glint {
+  0%, 72%, 100% { opacity: 0; transform: translateX(-6px) skewX(-14deg); }
+  80% { opacity: 1; transform: translateX(4px); }
+  90% { opacity: 0; transform: translateX(10px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cf-file, .reveal, .cf-glint, .cf-caret, .cf-stamp { animation: none; }
+}
