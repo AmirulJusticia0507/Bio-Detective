@@ -97,6 +97,7 @@ function App() {
           </ModuleCard>
         </div>
       </section>
+      {activeCase && <CaseFile caseFile={activeCase} onClose={() => setActiveCase(null)} />}
       <section className="stats">
         <div><b>3+</b><span>Modules</span></div>
         <div><b>25+</b><span>Compounds</span></div>
