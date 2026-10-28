@@ -11,5 +11,5 @@
 - [x] Deduction Board drag-and-drop + validation check
 - [x] Learning Hub: glossary & post-mortem
 - [x] Auth JWT & progress/skor
-- [ ] Testing & QA
-- [ ] Deploy & dokumentasi
+- [x] Testing & QA
+- [x] Deploy & dokumentasi
